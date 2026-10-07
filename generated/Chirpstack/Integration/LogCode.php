@@ -78,6 +78,12 @@ class LogCode
      * Generated from protobuf enum <code>F_CNT_DOWN = 10;</code>
      */
     const F_CNT_DOWN = 10;
+    /**
+     * Downlink has expired.
+     *
+     * Generated from protobuf enum <code>EXPIRED = 11;</code>
+     */
+    const EXPIRED = 11;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -91,6 +97,7 @@ class LogCode
         self::DOWNLINK_GATEWAY => 'DOWNLINK_GATEWAY',
         self::RELAY_NEW_END_DEVICE => 'RELAY_NEW_END_DEVICE',
         self::F_CNT_DOWN => 'F_CNT_DOWN',
+        self::EXPIRED => 'EXPIRED',
     ];
 
     public static function name($value)

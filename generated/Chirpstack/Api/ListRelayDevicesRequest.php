@@ -15,6 +15,7 @@ class ListRelayDevicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -40,6 +41,7 @@ class ListRelayDevicesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of multicast groups to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $relay_dev_eui
@@ -53,6 +55,7 @@ class ListRelayDevicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -64,6 +67,7 @@ class ListRelayDevicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var

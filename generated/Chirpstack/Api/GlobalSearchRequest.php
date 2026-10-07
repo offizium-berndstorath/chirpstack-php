@@ -21,6 +21,7 @@ class GlobalSearchRequest extends \Google\Protobuf\Internal\Message
     protected $search = '';
     /**
      * Max number of results to return.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>int64 limit = 2;</code>
      */
@@ -42,6 +43,7 @@ class GlobalSearchRequest extends \Google\Protobuf\Internal\Message
      *           Search query.
      *     @type int|string $limit
      *           Max number of results to return.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int|string $offset
      *           Offset offset of the result-set (for pagination).
      * }
@@ -79,6 +81,7 @@ class GlobalSearchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of results to return.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>int64 limit = 2;</code>
      * @return int|string
@@ -90,6 +93,7 @@ class GlobalSearchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of results to return.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>int64 limit = 2;</code>
      * @param int|string $var

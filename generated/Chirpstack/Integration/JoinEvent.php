@@ -55,6 +55,13 @@ class JoinEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.common.JoinServerContext join_server_context = 6;</code>
      */
     protected $join_server_context = null;
+    /**
+     * Region config ID.
+     * This contains the region config ID which reported the uplink.
+     *
+     * Generated from protobuf field <code>string region_config_id = 7;</code>
+     */
+    protected $region_config_id = '';
 
     /**
      * Constructor.
@@ -77,6 +84,9 @@ class JoinEvent extends \Google\Protobuf\Internal\Message
      *           A non-empty value indicatest that ChirpStack does not have access to
      *           the AppSKey and that the encryption / decryption of the payloads is
      *           the responsibility of the end-application.
+     *     @type string $region_config_id
+     *           Region config ID.
+     *           This contains the region config ID which reported the uplink.
      * }
      */
     public function __construct($data = NULL) {
@@ -282,6 +292,34 @@ class JoinEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Chirpstack\Common\JoinServerContext::class);
         $this->join_server_context = $var;
+
+        return $this;
+    }
+
+    /**
+     * Region config ID.
+     * This contains the region config ID which reported the uplink.
+     *
+     * Generated from protobuf field <code>string region_config_id = 7;</code>
+     * @return string
+     */
+    public function getRegionConfigId()
+    {
+        return $this->region_config_id;
+    }
+
+    /**
+     * Region config ID.
+     * This contains the region config ID which reported the uplink.
+     *
+     * Generated from protobuf field <code>string region_config_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionConfigId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region_config_id = $var;
 
         return $this;
     }

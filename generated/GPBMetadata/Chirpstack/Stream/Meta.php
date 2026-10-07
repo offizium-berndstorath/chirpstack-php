@@ -18,8 +18,8 @@ class Meta
         \GPBMetadata\Chirpstack\Gateway\Gw::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ã
-stream/meta.protostreamgw/gw.proto"
+»
+stream/meta.protostreamgw/gw.proto"Ó
 
 UplinkMeta
 dev_eui (	!
@@ -27,16 +27,18 @@ UplinkMeta
 rx_info (2.gw.UplinkRxInfo
 phy_payload_byte_count (
 mac_command_byte_count (&
-application_payload_byte_count (#
-message_type (2.common.MType"Å
+application_payload_byte_count (!
+
+frame_type (2.common.FType"ˇ
 DownlinkMeta
 dev_eui (	
 multicast_group_id (	#
 tx_info (2.gw.DownlinkTxInfo
 phy_payload_byte_count (
 mac_command_byte_count (&
-application_payload_byte_count (#
-message_type (2.common.MType
+application_payload_byte_count (!
+
+frame_type (2.common.FType
 
 gateway_id (	B¢
 io.chirpstack.api.streamB	MetaProtoPZ1github.com/chirpstack/chirpstack/api/go/v4/stream™Chirpstack.Stream Chirpstack\\Stream‚GPBMetadata\\Chirpstack\\Streambproto3'

@@ -19,10 +19,15 @@ class InfluxDbVersion
      * Generated from protobuf enum <code>INFLUXDB_2 = 1;</code>
      */
     const INFLUXDB_2 = 1;
+    /**
+     * Generated from protobuf enum <code>INFLUXDB_3 = 2;</code>
+     */
+    const INFLUXDB_3 = 2;
 
     private static $valueToName = [
         self::INFLUXDB_1 => 'INFLUXDB_1',
         self::INFLUXDB_2 => 'INFLUXDB_2',
+        self::INFLUXDB_3 => 'INFLUXDB_3',
     ];
 
     public static function name($value)

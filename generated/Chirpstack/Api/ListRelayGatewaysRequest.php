@@ -15,6 +15,7 @@ class ListRelayGatewaysRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of relay-gateways to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -41,6 +42,7 @@ class ListRelayGatewaysRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of relay-gateways to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $tenant_id
@@ -55,6 +57,7 @@ class ListRelayGatewaysRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of relay-gateways to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -66,6 +69,7 @@ class ListRelayGatewaysRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of relay-gateways to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var

@@ -15,6 +15,7 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -33,10 +34,24 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
     protected $search = '';
     /**
      * Application ID to list the multicast groups for.
+     * This is mandatory unless tenant_id is set.
      *
      * Generated from protobuf field <code>string application_id = 4;</code>
      */
     protected $application_id = '';
+    /**
+     * Device EUI (optional, HEX encoded EUI64).
+     *
+     * Generated from protobuf field <code>string dev_eui = 5;</code>
+     */
+    protected $dev_eui = '';
+    /**
+     * Tenant ID to list the multicast groups for.
+     * This is mandatory unless application_id is set.
+     *
+     * Generated from protobuf field <code>string tenant_id = 6;</code>
+     */
+    protected $tenant_id = '';
 
     /**
      * Constructor.
@@ -46,12 +61,19 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of multicast groups to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $search
      *           If set, the given string will be used to search on name.
      *     @type string $application_id
      *           Application ID to list the multicast groups for.
+     *           This is mandatory unless tenant_id is set.
+     *     @type string $dev_eui
+     *           Device EUI (optional, HEX encoded EUI64).
+     *     @type string $tenant_id
+     *           Tenant ID to list the multicast groups for.
+     *           This is mandatory unless application_id is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +83,7 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -72,6 +95,7 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of multicast groups to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var
@@ -139,6 +163,7 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Application ID to list the multicast groups for.
+     * This is mandatory unless tenant_id is set.
      *
      * Generated from protobuf field <code>string application_id = 4;</code>
      * @return string
@@ -150,6 +175,7 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Application ID to list the multicast groups for.
+     * This is mandatory unless tenant_id is set.
      *
      * Generated from protobuf field <code>string application_id = 4;</code>
      * @param string $var
@@ -159,6 +185,60 @@ class ListMulticastGroupsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device EUI (optional, HEX encoded EUI64).
+     *
+     * Generated from protobuf field <code>string dev_eui = 5;</code>
+     * @return string
+     */
+    public function getDevEui()
+    {
+        return $this->dev_eui;
+    }
+
+    /**
+     * Device EUI (optional, HEX encoded EUI64).
+     *
+     * Generated from protobuf field <code>string dev_eui = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDevEui($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->dev_eui = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tenant ID to list the multicast groups for.
+     * This is mandatory unless application_id is set.
+     *
+     * Generated from protobuf field <code>string tenant_id = 6;</code>
+     * @return string
+     */
+    public function getTenantId()
+    {
+        return $this->tenant_id;
+    }
+
+    /**
+     * Tenant ID to list the multicast groups for.
+     * This is mandatory unless application_id is set.
+     *
+     * Generated from protobuf field <code>string tenant_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTenantId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tenant_id = $var;
 
         return $this;
     }

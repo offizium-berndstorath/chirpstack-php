@@ -21,6 +21,7 @@ class ListTenantUsersRequest extends \Google\Protobuf\Internal\Message
     protected $tenant_id = '';
     /**
      * Max number of tenants to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 2;</code>
      */
@@ -42,6 +43,7 @@ class ListTenantUsersRequest extends \Google\Protobuf\Internal\Message
      *           Tenant ID (UUID).
      *     @type int $limit
      *           Max number of tenants to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      * }
@@ -79,6 +81,7 @@ class ListTenantUsersRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of tenants to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 2;</code>
      * @return int
@@ -90,6 +93,7 @@ class ListTenantUsersRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of tenants to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 2;</code>
      * @param int $var

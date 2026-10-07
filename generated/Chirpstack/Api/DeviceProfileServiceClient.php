@@ -49,6 +49,21 @@ class DeviceProfileServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * GetByProfileId tries to get the device-profile for the given ProfileID (see TR0005).
+     * @param \Chirpstack\Api\GetDeviceProfileByProfileIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetByProfileId(\Chirpstack\Api\GetDeviceProfileByProfileIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/GetByProfileId',
+        $argument,
+        ['\Chirpstack\Api\GetDeviceProfileByProfileIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Update the given device-profile.
      * @param \Chirpstack\Api\UpdateDeviceProfileRequest $argument input argument
      * @param array $metadata metadata
@@ -90,6 +105,96 @@ class DeviceProfileServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/api.DeviceProfileService/List',
         $argument,
         ['\Chirpstack\Api\ListDeviceProfilesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the available device-profile vendors.
+     * @param \Chirpstack\Api\ListDeviceProfileVendorsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListVendors(\Chirpstack\Api\ListDeviceProfileVendorsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/ListVendors',
+        $argument,
+        ['\Chirpstack\Api\ListDeviceProfileVendorsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the device-profile vendor.
+     * @param \Chirpstack\Api\GetDeviceProfileVendorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetVendor(\Chirpstack\Api\GetDeviceProfileVendorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/GetVendor',
+        $argument,
+        ['\Chirpstack\Api\GetDeviceProfileVendorResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete the given device-profile vendor.
+     * @param \Chirpstack\Api\DeleteDeviceProfileVendorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteVendor(\Chirpstack\Api\DeleteDeviceProfileVendorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/DeleteVendor',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the available device-profile devices.
+     * @param \Chirpstack\Api\ListDeviceProfileDevicesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDevices(\Chirpstack\Api\ListDeviceProfileDevicesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/ListDevices',
+        $argument,
+        ['\Chirpstack\Api\ListDeviceProfileDevicesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the device-profile device.
+     * @param \Chirpstack\Api\GetDeviceProfileDeviceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDevice(\Chirpstack\Api\GetDeviceProfileDeviceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/GetDevice',
+        $argument,
+        ['\Chirpstack\Api\GetDeviceProfileDeviceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete the given device-profile device.
+     * @param \Chirpstack\Api\DeleteDeviceProfileDeviceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDevice(\Chirpstack\Api\DeleteDeviceProfileDeviceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.DeviceProfileService/DeleteDevice',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 

@@ -15,6 +15,7 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of device-profiles to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -33,10 +34,34 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
     protected $search = '';
     /**
      * Tenant ID to list the device-profiles for.
+     * This value must be set, unless global_only is set to true. The result will
+     * be the list of device-profiles matching the tenant_id and global tenants.
+     * If you only wish to list the device-profiles matching the tenant_id, you
+     * must set tenant_only to true.
      *
      * Generated from protobuf field <code>string tenant_id = 4;</code>
      */
     protected $tenant_id = '';
+    /**
+     * Device-profile device ID.
+     * Note that his is the device-profile ID, not the DevEUI.
+     * This value requires global_only to be set to true.
+     *
+     * Generated from protobuf field <code>string device_id = 5;</code>
+     */
+    protected $device_id = '';
+    /**
+     * Only list global (non-tenant) device-profiles.
+     *
+     * Generated from protobuf field <code>bool global_only = 6;</code>
+     */
+    protected $global_only = false;
+    /**
+     * Only list device-profiles matching the tenant_id.
+     *
+     * Generated from protobuf field <code>bool tenant_only = 7;</code>
+     */
+    protected $tenant_only = false;
 
     /**
      * Constructor.
@@ -46,12 +71,25 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of device-profiles to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $search
      *           If set, the given string will be used to search on name.
      *     @type string $tenant_id
      *           Tenant ID to list the device-profiles for.
+     *           This value must be set, unless global_only is set to true. The result will
+     *           be the list of device-profiles matching the tenant_id and global tenants.
+     *           If you only wish to list the device-profiles matching the tenant_id, you
+     *           must set tenant_only to true.
+     *     @type string $device_id
+     *           Device-profile device ID.
+     *           Note that his is the device-profile ID, not the DevEUI.
+     *           This value requires global_only to be set to true.
+     *     @type bool $global_only
+     *           Only list global (non-tenant) device-profiles.
+     *     @type bool $tenant_only
+     *           Only list device-profiles matching the tenant_id.
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +99,7 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of device-profiles to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -72,6 +111,7 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of device-profiles to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var
@@ -139,6 +179,10 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Tenant ID to list the device-profiles for.
+     * This value must be set, unless global_only is set to true. The result will
+     * be the list of device-profiles matching the tenant_id and global tenants.
+     * If you only wish to list the device-profiles matching the tenant_id, you
+     * must set tenant_only to true.
      *
      * Generated from protobuf field <code>string tenant_id = 4;</code>
      * @return string
@@ -150,6 +194,10 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Tenant ID to list the device-profiles for.
+     * This value must be set, unless global_only is set to true. The result will
+     * be the list of device-profiles matching the tenant_id and global tenants.
+     * If you only wish to list the device-profiles matching the tenant_id, you
+     * must set tenant_only to true.
      *
      * Generated from protobuf field <code>string tenant_id = 4;</code>
      * @param string $var
@@ -159,6 +207,88 @@ class ListDeviceProfilesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tenant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device-profile device ID.
+     * Note that his is the device-profile ID, not the DevEUI.
+     * This value requires global_only to be set to true.
+     *
+     * Generated from protobuf field <code>string device_id = 5;</code>
+     * @return string
+     */
+    public function getDeviceId()
+    {
+        return $this->device_id;
+    }
+
+    /**
+     * Device-profile device ID.
+     * Note that his is the device-profile ID, not the DevEUI.
+     * This value requires global_only to be set to true.
+     *
+     * Generated from protobuf field <code>string device_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeviceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->device_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only list global (non-tenant) device-profiles.
+     *
+     * Generated from protobuf field <code>bool global_only = 6;</code>
+     * @return bool
+     */
+    public function getGlobalOnly()
+    {
+        return $this->global_only;
+    }
+
+    /**
+     * Only list global (non-tenant) device-profiles.
+     *
+     * Generated from protobuf field <code>bool global_only = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGlobalOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->global_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only list device-profiles matching the tenant_id.
+     *
+     * Generated from protobuf field <code>bool tenant_only = 7;</code>
+     * @return bool
+     */
+    public function getTenantOnly()
+    {
+        return $this->tenant_only;
+    }
+
+    /**
+     * Only list device-profiles matching the tenant_id.
+     *
+     * Generated from protobuf field <code>bool tenant_only = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTenantOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->tenant_only = $var;
 
         return $this;
     }

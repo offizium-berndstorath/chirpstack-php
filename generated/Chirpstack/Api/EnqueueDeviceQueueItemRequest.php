@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class EnqueueDeviceQueueItemRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Item to enqueue.
+     *
      * Generated from protobuf field <code>.api.DeviceQueueItem queue_item = 1;</code>
      */
     protected $queue_item = null;
+    /**
+     * Flush queue before enqueue.
+     *
+     * Generated from protobuf field <code>bool flush_queue = 2;</code>
+     */
+    protected $flush_queue = false;
 
     /**
      * Constructor.
@@ -25,6 +33,9 @@ class EnqueueDeviceQueueItemRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Chirpstack\Api\DeviceQueueItem $queue_item
+     *           Item to enqueue.
+     *     @type bool $flush_queue
+     *           Flush queue before enqueue.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +44,8 @@ class EnqueueDeviceQueueItemRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Item to enqueue.
+     *
      * Generated from protobuf field <code>.api.DeviceQueueItem queue_item = 1;</code>
      * @return \Chirpstack\Api\DeviceQueueItem|null
      */
@@ -52,6 +65,8 @@ class EnqueueDeviceQueueItemRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Item to enqueue.
+     *
      * Generated from protobuf field <code>.api.DeviceQueueItem queue_item = 1;</code>
      * @param \Chirpstack\Api\DeviceQueueItem $var
      * @return $this
@@ -60,6 +75,32 @@ class EnqueueDeviceQueueItemRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Chirpstack\Api\DeviceQueueItem::class);
         $this->queue_item = $var;
+
+        return $this;
+    }
+
+    /**
+     * Flush queue before enqueue.
+     *
+     * Generated from protobuf field <code>bool flush_queue = 2;</code>
+     * @return bool
+     */
+    public function getFlushQueue()
+    {
+        return $this->flush_queue;
+    }
+
+    /**
+     * Flush queue before enqueue.
+     *
+     * Generated from protobuf field <code>bool flush_queue = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFlushQueue($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->flush_queue = $var;
 
         return $this;
     }

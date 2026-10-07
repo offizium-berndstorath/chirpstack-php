@@ -349,66 +349,6 @@ class ApplicationServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Create LoRaCloud integration.
-     * @param \Chirpstack\Api\CreateLoraCloudIntegrationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function CreateLoraCloudIntegration(\Chirpstack\Api\CreateLoraCloudIntegrationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/api.ApplicationService/CreateLoraCloudIntegration',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get LoRaCloud integration.
-     * @param \Chirpstack\Api\GetLoraCloudIntegrationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetLoraCloudIntegration(\Chirpstack\Api\GetLoraCloudIntegrationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/api.ApplicationService/GetLoraCloudIntegration',
-        $argument,
-        ['\Chirpstack\Api\GetLoraCloudIntegrationResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Update LoRaCloud integration.
-     * @param \Chirpstack\Api\UpdateLoraCloudIntegrationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function UpdateLoraCloudIntegration(\Chirpstack\Api\UpdateLoraCloudIntegrationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/api.ApplicationService/UpdateLoraCloudIntegration',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Delete LoRaCloud integration.
-     * @param \Chirpstack\Api\DeleteLoraCloudIntegrationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteLoraCloudIntegration(\Chirpstack\Api\DeleteLoraCloudIntegrationRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/api.ApplicationService/DeleteLoraCloudIntegration',
-        $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Create GCP Pub/Sub integration.
      * @param \Chirpstack\Api\CreateGcpPubSubIntegrationRequest $argument input argument
      * @param array $metadata metadata
@@ -709,6 +649,66 @@ class ApplicationServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Create Blynk integration.
+     * @param \Chirpstack\Api\CreateBlynkIntegrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateBlynkIntegration(\Chirpstack\Api\CreateBlynkIntegrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/CreateBlynkIntegration',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get Blynk integration.
+     * @param \Chirpstack\Api\GetBlynkIntegrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetBlynkIntegration(\Chirpstack\Api\GetBlynkIntegrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/GetBlynkIntegration',
+        $argument,
+        ['\Chirpstack\Api\GetBlynkIntegrationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update Blynk integration.
+     * @param \Chirpstack\Api\UpdateBlynkIntegrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateBlynkIntegration(\Chirpstack\Api\UpdateBlynkIntegrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/UpdateBlynkIntegration',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete Blynk integration.
+     * @param \Chirpstack\Api\DeleteBlynkIntegrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteBlynkIntegration(\Chirpstack\Api\DeleteBlynkIntegrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/DeleteBlynkIntegration',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Generates application ID specific client-certificate.
      * @param \Chirpstack\Api\GenerateMqttIntegrationClientCertificateRequest $argument input argument
      * @param array $metadata metadata
@@ -720,6 +720,36 @@ class ApplicationServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/api.ApplicationService/GenerateMqttIntegrationClientCertificate',
         $argument,
         ['\Chirpstack\Api\GenerateMqttIntegrationClientCertificateResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List device-profiles used within the given application.
+     * @param \Chirpstack\Api\ListApplicationDeviceProfilesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDeviceProfiles(\Chirpstack\Api\ListApplicationDeviceProfilesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/ListDeviceProfiles',
+        $argument,
+        ['\Chirpstack\Api\ListApplicationDeviceProfilesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List device tags used within the given application.
+     * @param \Chirpstack\Api\ListApplicationDeviceTagsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDeviceTags(\Chirpstack\Api\ListApplicationDeviceTagsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.ApplicationService/ListDeviceTags',
+        $argument,
+        ['\Chirpstack\Api\ListApplicationDeviceTagsResponse', 'decode'],
         $metadata, $options);
     }
 

@@ -15,12 +15,12 @@ class Tenant
           return;
         }
         \GPBMetadata\Google\Api\Annotations::initOnce();
-        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
+        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ö
-api/tenant.protoapigoogle/protobuf/timestamp.protogoogle/protobuf/empty.proto"ï
+˝
+api/tenant.protoapigoogle/protobuf/empty.protogoogle/protobuf/timestamp.proto"∞
 Tenant
 
 id (	
@@ -31,7 +31,9 @@ class Tenant
 max_device_count (
 private_gateways_up (
 private_gateways_down (#
-tags	 (2.api.Tenant.TagsEntry+
+tags	 (2.api.Tenant.TagsEntry
+dev_addr_prefixes
+ (	+
 	TagsEntry
 key (	
 value (	:8"ñ
@@ -74,7 +76,9 @@ updated_at (2.google.protobuf.Timestamp"2
 user_id (	"O
 ListTenantsResponse
 total_count (#
-result (2.api.TenantListItem"Ñ
+result (2.api.TenantListItem"C
+(ListTenantsByDevAddrPrefixOverlapRequest
+dev_addr_prefix (	"Ñ
 
 TenantUser
 	tenant_id (	
@@ -116,13 +120,14 @@ updated_at (2.google.protobuf.Timestamp"?
 offset ("W
 ListTenantUsersResponse
 total_count (\'
-result (2.api.TenantUserListItem2¢
+result (2.api.TenantUserListItem2∫	
 TenantServiceV
 Create.api.CreateTenantRequest.api.CreateTenantResponse"Ç”‰ì"/api/tenants:*O
 Get.api.GetTenantRequest.api.GetTenantResponse"Ç”‰ì/api/tenants/{id}_
 Update.api.UpdateTenantRequest.google.protobuf.Empty"#Ç”‰ì/api/tenants/{tenant.id}:*U
 Delete.api.DeleteTenantRequest.google.protobuf.Empty"Ç”‰ì*/api/tenants/{id}O
-List.api.ListTenantsRequest.api.ListTenantsResponse"Ç”‰ì/api/tenantss
+List.api.ListTenantsRequest.api.ListTenantsResponse"Ç”‰ì/api/tenantsï
+ListByDevAddrPrefixOverlap-.api.ListTenantsByDevAddrPrefixOverlapRequest.api.ListTenantsResponse".Ç”‰ì(&/api/tenants/by-devaddr-prefix-overlaps
 AddUser.api.AddTenantUserRequest.google.protobuf.Empty"5Ç”‰ì/"*/api/tenants/{tenant_user.tenant_id}/users:*r
 GetUser.api.GetTenantUserRequest.api.GetTenantUserResponse"0Ç”‰ì*(/api/tenants/{tenant_id}/users/{user_id}è
 

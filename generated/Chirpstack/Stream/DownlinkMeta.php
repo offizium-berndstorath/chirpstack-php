@@ -50,11 +50,11 @@ class DownlinkMeta extends \Google\Protobuf\Internal\Message
      */
     protected $application_payload_byte_count = 0;
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType message_type = 7;</code>
+     * Generated from protobuf field <code>.common.FType frame_type = 7;</code>
      */
-    protected $message_type = 0;
+    protected $frame_type = 0;
     /**
      * Gateway ID (EUI64).
      *
@@ -80,8 +80,8 @@ class DownlinkMeta extends \Google\Protobuf\Internal\Message
      *           MAC-Command byte count.
      *     @type int $application_payload_byte_count
      *           Application payload byte count.
-     *     @type int $message_type
-     *           Message type.
+     *     @type int $frame_type
+     *           Frame type.
      *     @type string $gateway_id
      *           Gateway ID (EUI64).
      * }
@@ -258,27 +258,27 @@ class DownlinkMeta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType message_type = 7;</code>
+     * Generated from protobuf field <code>.common.FType frame_type = 7;</code>
      * @return int
      */
-    public function getMessageType()
+    public function getFrameType()
     {
-        return $this->message_type;
+        return $this->frame_type;
     }
 
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType message_type = 7;</code>
+     * Generated from protobuf field <code>.common.FType frame_type = 7;</code>
      * @param int $var
      * @return $this
      */
-    public function setMessageType($var)
+    public function setFrameType($var)
     {
-        GPBUtil::checkEnum($var, \Chirpstack\Common\MType::class);
-        $this->message_type = $var;
+        GPBUtil::checkEnum($var, \Chirpstack\Common\FType::class);
+        $this->frame_type = $var;
 
         return $this;
     }

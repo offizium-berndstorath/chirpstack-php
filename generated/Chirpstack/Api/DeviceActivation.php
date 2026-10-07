@@ -33,18 +33,21 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
     protected $app_s_key = '';
     /**
      * Network session encryption key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string nwk_s_enc_key = 4;</code>
      */
     protected $nwk_s_enc_key = '';
     /**
      * Serving network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string s_nwk_s_int_key = 8;</code>
      */
     protected $s_nwk_s_int_key = '';
     /**
      * Forwarding network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string f_nwk_s_int_key = 9;</code>
      */
@@ -82,10 +85,13 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
      *           Application session key (HEX encoded).
      *     @type string $nwk_s_enc_key
      *           Network session encryption key (HEX encoded).
+     *           Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *     @type string $s_nwk_s_int_key
      *           Serving network session integrity key (HEX encoded).
+     *           Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *     @type string $f_nwk_s_int_key
      *           Forwarding network session integrity key (HEX encoded).
+     *           Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *     @type int $f_cnt_up
      *           Uplink frame-counter.
      *     @type int $n_f_cnt_down
@@ -179,6 +185,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Network session encryption key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string nwk_s_enc_key = 4;</code>
      * @return string
@@ -190,6 +197,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Network session encryption key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string nwk_s_enc_key = 4;</code>
      * @param string $var
@@ -205,6 +213,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Serving network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string s_nwk_s_int_key = 8;</code>
      * @return string
@@ -216,6 +225,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Serving network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string s_nwk_s_int_key = 8;</code>
      * @param string $var
@@ -231,6 +241,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Forwarding network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string f_nwk_s_int_key = 9;</code>
      * @return string
@@ -242,6 +253,7 @@ class DeviceActivation extends \Google\Protobuf\Internal\Message
 
     /**
      * Forwarding network session integrity key (HEX encoded).
+     * Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey.
      *
      * Generated from protobuf field <code>string f_nwk_s_int_key = 9;</code>
      * @param string $var

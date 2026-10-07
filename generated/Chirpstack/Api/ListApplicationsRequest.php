@@ -15,6 +15,7 @@ class ListApplicationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of applications to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -46,6 +47,7 @@ class ListApplicationsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of applications to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $search
@@ -61,6 +63,7 @@ class ListApplicationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of applications to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -72,6 +75,7 @@ class ListApplicationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of applications to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var

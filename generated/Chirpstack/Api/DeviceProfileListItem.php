@@ -73,6 +73,40 @@ class DeviceProfileListItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool supports_class_c = 10;</code>
      */
     protected $supports_class_c = false;
+    /**
+     * Vendor ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_id = 11;</code>
+     */
+    protected $vendor_id = '';
+    /**
+     * Vendor name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_name = 12;</code>
+     */
+    protected $vendor_name = '';
+    /**
+     * Device ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_id = 13;</code>
+     */
+    protected $device_id = '';
+    /**
+     * Device name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_name = 14;</code>
+     */
+    protected $device_name = '';
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 15;</code>
+     */
+    protected $firmware_version = '';
 
     /**
      * Constructor.
@@ -100,6 +134,20 @@ class DeviceProfileListItem extends \Google\Protobuf\Internal\Message
      *           Supports Class-B.
      *     @type bool $supports_class_c
      *           Supports Class-C.
+     *     @type string $vendor_id
+     *           Vendor ID.
+     *           This value is only available for global device-profiles.
+     *     @type string $vendor_name
+     *           Vendor name.
+     *           This value is only available for global device-profiles.
+     *     @type string $device_id
+     *           Device ID.
+     *           This value is only available for global device-profiles.
+     *     @type string $device_name
+     *           Device name.
+     *           This value is only available for global device-profiles.
+     *     @type string $firmware_version
+     *           Firmware version.
      * }
      */
     public function __construct($data = NULL) {
@@ -383,6 +431,144 @@ class DeviceProfileListItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->supports_class_c = $var;
+
+        return $this;
+    }
+
+    /**
+     * Vendor ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_id = 11;</code>
+     * @return string
+     */
+    public function getVendorId()
+    {
+        return $this->vendor_id;
+    }
+
+    /**
+     * Vendor ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVendorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->vendor_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Vendor name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_name = 12;</code>
+     * @return string
+     */
+    public function getVendorName()
+    {
+        return $this->vendor_name;
+    }
+
+    /**
+     * Vendor name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string vendor_name = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVendorName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->vendor_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_id = 13;</code>
+     * @return string
+     */
+    public function getDeviceId()
+    {
+        return $this->device_id;
+    }
+
+    /**
+     * Device ID.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_id = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeviceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->device_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_name = 14;</code>
+     * @return string
+     */
+    public function getDeviceName()
+    {
+        return $this->device_name;
+    }
+
+    /**
+     * Device name.
+     * This value is only available for global device-profiles.
+     *
+     * Generated from protobuf field <code>string device_name = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeviceName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->device_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 15;</code>
+     * @return string
+     */
+    public function getFirmwareVersion()
+    {
+        return $this->firmware_version;
+    }
+
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirmwareVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->firmware_version = $var;
 
         return $this;
     }

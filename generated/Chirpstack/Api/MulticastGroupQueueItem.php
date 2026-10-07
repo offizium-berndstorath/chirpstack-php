@@ -38,6 +38,13 @@ class MulticastGroupQueueItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes data = 4;</code>
      */
     protected $data = '';
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 5;</code>
+     */
+    protected $expires_at = null;
 
     /**
      * Constructor.
@@ -54,6 +61,9 @@ class MulticastGroupQueueItem extends \Google\Protobuf\Internal\Message
      *           FPort (must be > 0).
      *     @type string $data
      *           Payload.
+     *     @type \Google\Protobuf\Timestamp $expires_at
+     *           Expires at (optional).
+     *           Expired queue-items will be automatically removed from the queue.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +173,44 @@ class MulticastGroupQueueItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 5;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->expires_at;
+    }
+
+    public function hasExpiresAt()
+    {
+        return isset($this->expires_at);
+    }
+
+    public function clearExpiresAt()
+    {
+        unset($this->expires_at);
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 5;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setExpiresAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->expires_at = $var;
 
         return $this;
     }

@@ -93,6 +93,21 @@ class TenantServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Get the list of tenants with DevAddr prefix overlap.
+     * @param \Chirpstack\Api\ListTenantsByDevAddrPrefixOverlapRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListByDevAddrPrefixOverlap(\Chirpstack\Api\ListTenantsByDevAddrPrefixOverlapRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/api.TenantService/ListByDevAddrPrefixOverlap',
+        $argument,
+        ['\Chirpstack\Api\ListTenantsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Add an user to the tenant.
      * Note: the user must already exist.
      * @param \Chirpstack\Api\AddTenantUserRequest $argument input argument

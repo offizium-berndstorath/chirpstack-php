@@ -28,10 +28,6 @@ class IntegrationKind
      */
     const MY_DEVICES = 3;
     /**
-     * Generated from protobuf enum <code>LORA_CLOUD = 4;</code>
-     */
-    const LORA_CLOUD = 4;
-    /**
      * Generated from protobuf enum <code>GCP_PUB_SUB = 5;</code>
      */
     const GCP_PUB_SUB = 5;
@@ -55,19 +51,23 @@ class IntegrationKind
      * Generated from protobuf enum <code>IFTTT = 10;</code>
      */
     const IFTTT = 10;
+    /**
+     * Generated from protobuf enum <code>BLYNK = 11;</code>
+     */
+    const BLYNK = 11;
 
     private static $valueToName = [
         self::HTTP => 'HTTP',
         self::INFLUX_DB => 'INFLUX_DB',
         self::THINGS_BOARD => 'THINGS_BOARD',
         self::MY_DEVICES => 'MY_DEVICES',
-        self::LORA_CLOUD => 'LORA_CLOUD',
         self::GCP_PUB_SUB => 'GCP_PUB_SUB',
         self::AWS_SNS => 'AWS_SNS',
         self::AZURE_SERVICE_BUS => 'AZURE_SERVICE_BUS',
         self::PILOT_THINGS => 'PILOT_THINGS',
         self::MQTT_GLOBAL => 'MQTT_GLOBAL',
         self::IFTTT => 'IFTTT',
+        self::BLYNK => 'BLYNK',
     ];
 
     public static function name($value)

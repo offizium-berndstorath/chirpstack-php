@@ -67,6 +67,12 @@ class DeviceListItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.api.DeviceStatus device_status = 9;</code>
      */
     protected $device_status = null;
+    /**
+     * Device tags.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 10;</code>
+     */
+    private $tags;
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class DeviceListItem extends \Google\Protobuf\Internal\Message
      *           Device-profile name.
      *     @type \Chirpstack\Api\DeviceStatus $device_status
      *           Device status.
+     *     @type array|\Google\Protobuf\Internal\MapField $tags
+     *           Device tags.
      * }
      */
     public function __construct($data = NULL) {
@@ -369,6 +377,32 @@ class DeviceListItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Chirpstack\Api\DeviceStatus::class);
         $this->device_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device tags.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 10;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Device tags.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 10;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
 
         return $this;
     }

@@ -33,6 +33,14 @@ class DeviceKeys extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string app_key = 3;</code>
      */
     protected $app_key = '';
+    /**
+     * Gen App Key (128 bit).
+     * Note: This field only needs to be set for LoRaWAN 1.0.x devices that
+     * implement TS005 (remote multicast setup).
+     *
+     * Generated from protobuf field <code>string gen_app_key = 4;</code>
+     */
+    protected $gen_app_key = '';
 
     /**
      * Constructor.
@@ -48,6 +56,10 @@ class DeviceKeys extends \Google\Protobuf\Internal\Message
      *     @type string $app_key
      *           Application root key (128 bit).
      *           Note: This field only needs to be set for LoRaWAN 1.1.x devices!
+     *     @type string $gen_app_key
+     *           Gen App Key (128 bit).
+     *           Note: This field only needs to be set for LoRaWAN 1.0.x devices that
+     *           implement TS005 (remote multicast setup).
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +145,36 @@ class DeviceKeys extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->app_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Gen App Key (128 bit).
+     * Note: This field only needs to be set for LoRaWAN 1.0.x devices that
+     * implement TS005 (remote multicast setup).
+     *
+     * Generated from protobuf field <code>string gen_app_key = 4;</code>
+     * @return string
+     */
+    public function getGenAppKey()
+    {
+        return $this->gen_app_key;
+    }
+
+    /**
+     * Gen App Key (128 bit).
+     * Note: This field only needs to be set for LoRaWAN 1.0.x devices that
+     * implement TS005 (remote multicast setup).
+     *
+     * Generated from protobuf field <code>string gen_app_key = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGenAppKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->gen_app_key = $var;
 
         return $this;
     }

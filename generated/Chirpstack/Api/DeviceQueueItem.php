@@ -34,6 +34,8 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
     protected $confirmed = false;
     /**
      * FPort (must be > 0).
+     * On enqueue and if using a JavaScript codec, this value might be
+     * automatically set by the codec function.
      *
      * Generated from protobuf field <code>uint32 f_port = 4;</code>
      */
@@ -77,6 +79,13 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_encrypted = 9;</code>
      */
     protected $is_encrypted = false;
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 10;</code>
+     */
+    protected $expires_at = null;
 
     /**
      * Constructor.
@@ -93,6 +102,8 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
      *           Confirmed.
      *     @type int $f_port
      *           FPort (must be > 0).
+     *           On enqueue and if using a JavaScript codec, this value might be
+     *           automatically set by the codec function.
      *     @type string $data
      *           Data.
      *           Or use the json_object field when a codec has been configured.
@@ -112,6 +123,9 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
      *           This must be set to true if the end-application has already encrypted
      *           the data payload. In this case, the f_cnt_down field must be set to
      *           the corresponding frame-counter which has been used during the encryption.
+     *     @type \Google\Protobuf\Timestamp $expires_at
+     *           Expires at (optional).
+     *           Expired queue-items will be automatically removed from the queue.
      * }
      */
     public function __construct($data = NULL) {
@@ -201,6 +215,8 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
 
     /**
      * FPort (must be > 0).
+     * On enqueue and if using a JavaScript codec, this value might be
+     * automatically set by the codec function.
      *
      * Generated from protobuf field <code>uint32 f_port = 4;</code>
      * @return int
@@ -212,6 +228,8 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
 
     /**
      * FPort (must be > 0).
+     * On enqueue and if using a JavaScript codec, this value might be
+     * automatically set by the codec function.
      *
      * Generated from protobuf field <code>uint32 f_port = 4;</code>
      * @param int $var
@@ -379,6 +397,44 @@ class DeviceQueueItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_encrypted = $var;
+
+        return $this;
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->expires_at;
+    }
+
+    public function hasExpiresAt()
+    {
+        return isset($this->expires_at);
+    }
+
+    public function clearExpiresAt()
+    {
+        unset($this->expires_at);
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setExpiresAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->expires_at = $var;
 
         return $this;
     }

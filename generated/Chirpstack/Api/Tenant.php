@@ -77,6 +77,17 @@ class Tenant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> tags = 9;</code>
      */
     private $tags;
+    /**
+     * DevAddr Prefixes.
+     * This must be one or multiple sub-sets of the global DevAddr pool, or
+     * and error will be raised on create or update.
+     * Example prefix: 0000ff00/24
+     * (0000ff00 - 0000ffff)
+     * If left blank, ChirpStack will use the global DevAddr pool.
+     *
+     * Generated from protobuf field <code>repeated string dev_addr_prefixes = 10;</code>
+     */
+    private $dev_addr_prefixes;
 
     /**
      * Constructor.
@@ -112,6 +123,13 @@ class Tenant extends \Google\Protobuf\Internal\Message
      *           Tags (user defined).
      *           These tags can be used to add additional information to the tenant. These
      *           tags are NOT exposed in the integration events.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $dev_addr_prefixes
+     *           DevAddr Prefixes.
+     *           This must be one or multiple sub-sets of the global DevAddr pool, or
+     *           and error will be raised on create or update.
+     *           Example prefix: 0000ff00/24
+     *           (0000ff00 - 0000ffff)
+     *           If left blank, ChirpStack will use the global DevAddr pool.
      * }
      */
     public function __construct($data = NULL) {
@@ -369,6 +387,42 @@ class Tenant extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * DevAddr Prefixes.
+     * This must be one or multiple sub-sets of the global DevAddr pool, or
+     * and error will be raised on create or update.
+     * Example prefix: 0000ff00/24
+     * (0000ff00 - 0000ffff)
+     * If left blank, ChirpStack will use the global DevAddr pool.
+     *
+     * Generated from protobuf field <code>repeated string dev_addr_prefixes = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDevAddrPrefixes()
+    {
+        return $this->dev_addr_prefixes;
+    }
+
+    /**
+     * DevAddr Prefixes.
+     * This must be one or multiple sub-sets of the global DevAddr pool, or
+     * and error will be raised on create or update.
+     * Example prefix: 0000ff00/24
+     * (0000ff00 - 0000ffff)
+     * If left blank, ChirpStack will use the global DevAddr pool.
+     *
+     * Generated from protobuf field <code>repeated string dev_addr_prefixes = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDevAddrPrefixes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->dev_addr_prefixes = $arr;
 
         return $this;
     }

@@ -32,11 +32,11 @@ class UplinkFrameLog extends \Google\Protobuf\Internal\Message
      */
     private $rx_info;
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType m_type = 4;</code>
+     * Generated from protobuf field <code>.common.FType f_type = 4;</code>
      */
-    protected $m_type = 0;
+    protected $f_type = 0;
     /**
      * Device address (optional).
      *
@@ -80,8 +80,8 @@ class UplinkFrameLog extends \Google\Protobuf\Internal\Message
      *           TX meta-data.
      *     @type array<\Chirpstack\Gateway\UplinkRxInfo>|\Google\Protobuf\Internal\RepeatedField $rx_info
      *           RX meta-data.
-     *     @type int $m_type
-     *           Message type.
+     *     @type int $f_type
+     *           Frame type.
      *     @type string $dev_addr
      *           Device address (optional).
      *     @type string $dev_eui
@@ -188,27 +188,27 @@ class UplinkFrameLog extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType m_type = 4;</code>
+     * Generated from protobuf field <code>.common.FType f_type = 4;</code>
      * @return int
      */
-    public function getMType()
+    public function getFType()
     {
-        return $this->m_type;
+        return $this->f_type;
     }
 
     /**
-     * Message type.
+     * Frame type.
      *
-     * Generated from protobuf field <code>.common.MType m_type = 4;</code>
+     * Generated from protobuf field <code>.common.FType f_type = 4;</code>
      * @param int $var
      * @return $this
      */
-    public function setMType($var)
+    public function setFType($var)
     {
-        GPBUtil::checkEnum($var, \Chirpstack\Common\MType::class);
-        $this->m_type = $var;
+        GPBUtil::checkEnum($var, \Chirpstack\Common\FType::class);
+        $this->f_type = $var;
 
         return $this;
     }

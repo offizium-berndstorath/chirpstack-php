@@ -15,6 +15,7 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Max number of devices to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      */
@@ -43,6 +44,30 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string multicast_group_id = 5;</code>
      */
     protected $multicast_group_id = '';
+    /**
+     * If set, the given value will be used to sort by (optional).
+     *
+     * Generated from protobuf field <code>.api.ListDevicesRequest.OrderBy order_by = 6;</code>
+     */
+    protected $order_by = 0;
+    /**
+     * If set, the sorting direction will be decending (default = ascending) (optional).
+     *
+     * Generated from protobuf field <code>bool order_by_desc = 7;</code>
+     */
+    protected $order_by_desc = false;
+    /**
+     * Tags to filter devices on.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     */
+    private $tags;
+    /**
+     * Device-profile ID (UUID) to filter devices on.
+     *
+     * Generated from protobuf field <code>string device_profile_id = 9;</code>
+     */
+    protected $device_profile_id = '';
 
     /**
      * Constructor.
@@ -52,6 +77,7 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $limit
      *           Max number of devices to return in the result-set.
+     *           If not set, it will be treated as 0, and the response will only return the total_count.
      *     @type int $offset
      *           Offset in the result-set (for pagination).
      *     @type string $search
@@ -60,6 +86,14 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
      *           Application ID (UUID) to filter devices on.
      *     @type string $multicast_group_id
      *           Multicst-group ID (UUID) to filter devices on.
+     *     @type int $order_by
+     *           If set, the given value will be used to sort by (optional).
+     *     @type bool $order_by_desc
+     *           If set, the sorting direction will be decending (default = ascending) (optional).
+     *     @type array|\Google\Protobuf\Internal\MapField $tags
+     *           Tags to filter devices on.
+     *     @type string $device_profile_id
+     *           Device-profile ID (UUID) to filter devices on.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +103,7 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of devices to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @return int
@@ -80,6 +115,7 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Max number of devices to return in the result-set.
+     * If not set, it will be treated as 0, and the response will only return the total_count.
      *
      * Generated from protobuf field <code>uint32 limit = 1;</code>
      * @param int $var
@@ -193,6 +229,110 @@ class ListDevicesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->multicast_group_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, the given value will be used to sort by (optional).
+     *
+     * Generated from protobuf field <code>.api.ListDevicesRequest.OrderBy order_by = 6;</code>
+     * @return int
+     */
+    public function getOrderBy()
+    {
+        return $this->order_by;
+    }
+
+    /**
+     * If set, the given value will be used to sort by (optional).
+     *
+     * Generated from protobuf field <code>.api.ListDevicesRequest.OrderBy order_by = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrderBy($var)
+    {
+        GPBUtil::checkEnum($var, \Chirpstack\Api\ListDevicesRequest\OrderBy::class);
+        $this->order_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, the sorting direction will be decending (default = ascending) (optional).
+     *
+     * Generated from protobuf field <code>bool order_by_desc = 7;</code>
+     * @return bool
+     */
+    public function getOrderByDesc()
+    {
+        return $this->order_by_desc;
+    }
+
+    /**
+     * If set, the sorting direction will be decending (default = ascending) (optional).
+     *
+     * Generated from protobuf field <code>bool order_by_desc = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOrderByDesc($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->order_by_desc = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tags to filter devices on.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Tags to filter devices on.
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Device-profile ID (UUID) to filter devices on.
+     *
+     * Generated from protobuf field <code>string device_profile_id = 9;</code>
+     * @return string
+     */
+    public function getDeviceProfileId()
+    {
+        return $this->device_profile_id;
+    }
+
+    /**
+     * Device-profile ID (UUID) to filter devices on.
+     *
+     * Generated from protobuf field <code>string device_profile_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeviceProfileId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->device_profile_id = $var;
 
         return $this;
     }

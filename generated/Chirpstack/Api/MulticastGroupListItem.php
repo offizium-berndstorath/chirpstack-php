@@ -49,6 +49,18 @@ class MulticastGroupListItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.api.MulticastGroupType group_type = 6;</code>
      */
     protected $group_type = 0;
+    /**
+     * Application ID.
+     *
+     * Generated from protobuf field <code>string application_id = 7;</code>
+     */
+    protected $application_id = '';
+    /**
+     * Application name.
+     *
+     * Generated from protobuf field <code>string application_name = 8;</code>
+     */
+    protected $application_name = '';
 
     /**
      * Constructor.
@@ -68,6 +80,10 @@ class MulticastGroupListItem extends \Google\Protobuf\Internal\Message
      *           Region.
      *     @type int $group_type
      *           Multicast group type.
+     *     @type string $application_id
+     *           Application ID.
+     *     @type string $application_name
+     *           Application name.
      * }
      */
     public function __construct($data = NULL) {
@@ -247,6 +263,58 @@ class MulticastGroupListItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Chirpstack\Api\MulticastGroupType::class);
         $this->group_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Application ID.
+     *
+     * Generated from protobuf field <code>string application_id = 7;</code>
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->application_id;
+    }
+
+    /**
+     * Application ID.
+     *
+     * Generated from protobuf field <code>string application_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Application name.
+     *
+     * Generated from protobuf field <code>string application_name = 8;</code>
+     * @return string
+     */
+    public function getApplicationName()
+    {
+        return $this->application_name;
+    }
+
+    /**
+     * Application name.
+     *
+     * Generated from protobuf field <code>string application_name = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_name = $var;
 
         return $this;
     }

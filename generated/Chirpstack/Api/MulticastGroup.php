@@ -82,20 +82,16 @@ class MulticastGroup extends \Google\Protobuf\Internal\Message
      */
     protected $frequency = 0;
     /**
-     * Ping-slot period (only for Class-B).
-     * Deprecated: use class_b_ping_slot_nb_k.
+     * Class-B ping-slot periodicity (only for Class-B).
+     * Valid options are: 0 - 7.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_period = 12;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 14;</code>
      */
-    protected $class_b_ping_slot_period = 0;
-    /**
-     * Class-B ping-slots per beacon period (only for Class-B).
-     * Valid options are: 0 - 7;
-     * The actual number of ping-slots per beacon period equals to 2^k.
-     *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 14;</code>
-     */
-    protected $class_b_ping_slot_nb_k = 0;
+    protected $class_b_ping_slot_periodicity = 0;
     /**
      * Scheduling type (only for Class-C).
      *
@@ -133,13 +129,13 @@ class MulticastGroup extends \Google\Protobuf\Internal\Message
      *           Data-rate.
      *     @type int $frequency
      *           Frequency (Hz).
-     *     @type int $class_b_ping_slot_period
-     *           Ping-slot period (only for Class-B).
-     *           Deprecated: use class_b_ping_slot_nb_k.
-     *     @type int $class_b_ping_slot_nb_k
-     *           Class-B ping-slots per beacon period (only for Class-B).
-     *           Valid options are: 0 - 7;
-     *           The actual number of ping-slots per beacon period equals to 2^k.
+     *     @type int $class_b_ping_slot_periodicity
+     *           Class-B ping-slot periodicity (only for Class-B).
+     *           Valid options are: 0 - 7.
+     *           Number of ping-slots per beacon-period:
+     *           pingNb = 2^(7-periodicity)
+     *           Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     *           Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *     @type int $class_c_scheduling_type
      *           Scheduling type (only for Class-C).
      * }
@@ -440,59 +436,37 @@ class MulticastGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ping-slot period (only for Class-B).
-     * Deprecated: use class_b_ping_slot_nb_k.
+     * Class-B ping-slot periodicity (only for Class-B).
+     * Valid options are: 0 - 7.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_period = 12;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 14;</code>
      * @return int
      */
-    public function getClassBPingSlotPeriod()
+    public function getClassBPingSlotPeriodicity()
     {
-        return $this->class_b_ping_slot_period;
+        return $this->class_b_ping_slot_periodicity;
     }
 
     /**
-     * Ping-slot period (only for Class-B).
-     * Deprecated: use class_b_ping_slot_nb_k.
+     * Class-B ping-slot periodicity (only for Class-B).
+     * Valid options are: 0 - 7.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_period = 12;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 14;</code>
      * @param int $var
      * @return $this
      */
-    public function setClassBPingSlotPeriod($var)
+    public function setClassBPingSlotPeriodicity($var)
     {
         GPBUtil::checkUint32($var);
-        $this->class_b_ping_slot_period = $var;
-
-        return $this;
-    }
-
-    /**
-     * Class-B ping-slots per beacon period (only for Class-B).
-     * Valid options are: 0 - 7;
-     * The actual number of ping-slots per beacon period equals to 2^k.
-     *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 14;</code>
-     * @return int
-     */
-    public function getClassBPingSlotNbK()
-    {
-        return $this->class_b_ping_slot_nb_k;
-    }
-
-    /**
-     * Class-B ping-slots per beacon period (only for Class-B).
-     * Valid options are: 0 - 7;
-     * The actual number of ping-slots per beacon period equals to 2^k.
-     *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 14;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setClassBPingSlotNbK($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->class_b_ping_slot_nb_k = $var;
+        $this->class_b_ping_slot_periodicity = $var;
 
         return $this;
     }

@@ -39,6 +39,10 @@ class RegParamsRevision
      * Generated from protobuf enum <code>RP002_1_0_4 = 6;</code>
      */
     const RP002_1_0_4 = 6;
+    /**
+     * Generated from protobuf enum <code>RP002_1_0_5 = 7;</code>
+     */
+    const RP002_1_0_5 = 7;
 
     private static $valueToName = [
         self::A => 'A',
@@ -48,6 +52,7 @@ class RegParamsRevision
         self::RP002_1_0_2 => 'RP002_1_0_2',
         self::RP002_1_0_3 => 'RP002_1_0_3',
         self::RP002_1_0_4 => 'RP002_1_0_4',
+        self::RP002_1_0_5 => 'RP002_1_0_5',
     ];
 
     public static function name($value)

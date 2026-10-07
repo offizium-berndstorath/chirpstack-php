@@ -124,13 +124,16 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
      */
     protected $class_b_timeout = 0;
     /**
-     * Class-B ping-slots per beacon period.
+     * Class-B ping-slot periodicity.
      * Valid options are: 0 - 7.
-     * The actual number of ping-slots per beacon period equals to 2^k.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 17;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 17;</code>
      */
-    protected $class_b_ping_slot_nb_k = 0;
+    protected $class_b_ping_slot_periodicity = 0;
     /**
      * Class-B ping-slot DR.
      *
@@ -428,6 +431,47 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 rx1_delay = 53;</code>
      */
     protected $rx1_delay = 0;
+    /**
+     * Application Layer parameters.
+     *
+     * Generated from protobuf field <code>.api.AppLayerParams app_layer_params = 54;</code>
+     */
+    protected $app_layer_params = null;
+    /**
+     * Device-profile device ID (UUID) (optiona).
+     *
+     * Generated from protobuf field <code>string device_id = 55;</code>
+     */
+    protected $device_id = '';
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 56;</code>
+     */
+    protected $firmware_version = '';
+    /**
+     * Supported uplink data-rates.
+     * This option configures the data-rates that are supported by the devices
+     * using this device-profile. If not set, the default min / max data-rates
+     * will be used.
+     * Example: In case you would like to use also SF5 and SF6 in EU868, you would
+     * set this option to: 0, 1, 2, 3, 4, 5, 6, 7, 12, 13.
+     *
+     * Generated from protobuf field <code>repeated uint32 supported_uplink_data_rates = 57;</code>
+     */
+    private $supported_uplink_data_rates;
+    /**
+     * Class-B downlink only.
+     * If enabled and if the device is operating as Class-B device, then ChirpStack will
+     * only send application payload as Class-B ping slots. This means that if the device
+     * sends a Class-A uplink, ChirpStack will only respond with mac-commands (if needed).
+     * Enabling this option can reduce the risk of out-of-order downlinks in cases where
+     * ChirpStack might schedule a Class-B ping-slot downlink but before this is
+     * transmitted by the gateway, it also responsed with a Class-A downlink.
+     *
+     * Generated from protobuf field <code>bool class_b_downlink_only = 58;</code>
+     */
+    protected $class_b_downlink_only = false;
 
     /**
      * Constructor.
@@ -477,10 +521,13 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
      *           Class-B timeout (seconds).
      *           This is the maximum time ChirpStack will wait to receive an acknowledgement
      *           from the device (if requested).
-     *     @type int $class_b_ping_slot_nb_k
-     *           Class-B ping-slots per beacon period.
+     *     @type int $class_b_ping_slot_periodicity
+     *           Class-B ping-slot periodicity.
      *           Valid options are: 0 - 7.
-     *           The actual number of ping-slots per beacon period equals to 2^k.
+     *           Number of ping-slots per beacon-period:
+     *           pingNb = 2^(7-periodicity)
+     *           Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     *           Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *     @type int $class_b_ping_slot_dr
      *           Class-B ping-slot DR.
      *     @type int $class_b_ping_slot_freq
@@ -638,6 +685,27 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
      *           In other words, it can be used to increase the RX1 Delay but not to decrease
      *           it.
      *           Valid options are 1 - 15 (0 = always use system RX1 Delay).
+     *     @type \Chirpstack\Api\AppLayerParams $app_layer_params
+     *           Application Layer parameters.
+     *     @type string $device_id
+     *           Device-profile device ID (UUID) (optiona).
+     *     @type string $firmware_version
+     *           Firmware version.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $supported_uplink_data_rates
+     *           Supported uplink data-rates.
+     *           This option configures the data-rates that are supported by the devices
+     *           using this device-profile. If not set, the default min / max data-rates
+     *           will be used.
+     *           Example: In case you would like to use also SF5 and SF6 in EU868, you would
+     *           set this option to: 0, 1, 2, 3, 4, 5, 6, 7, 12, 13.
+     *     @type bool $class_b_downlink_only
+     *           Class-B downlink only.
+     *           If enabled and if the device is operating as Class-B device, then ChirpStack will
+     *           only send application payload as Class-B ping slots. This means that if the device
+     *           sends a Class-A uplink, ChirpStack will only respond with mac-commands (if needed).
+     *           Enabling this option can reduce the risk of out-of-order downlinks in cases where
+     *           ChirpStack might schedule a Class-B ping-slot downlink but before this is
+     *           transmitted by the gateway, it also responsed with a Class-A downlink.
      * }
      */
     public function __construct($data = NULL) {
@@ -1104,31 +1172,37 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Class-B ping-slots per beacon period.
+     * Class-B ping-slot periodicity.
      * Valid options are: 0 - 7.
-     * The actual number of ping-slots per beacon period equals to 2^k.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 17;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 17;</code>
      * @return int
      */
-    public function getClassBPingSlotNbK()
+    public function getClassBPingSlotPeriodicity()
     {
-        return $this->class_b_ping_slot_nb_k;
+        return $this->class_b_ping_slot_periodicity;
     }
 
     /**
-     * Class-B ping-slots per beacon period.
+     * Class-B ping-slot periodicity.
      * Valid options are: 0 - 7.
-     * The actual number of ping-slots per beacon period equals to 2^k.
+     * Number of ping-slots per beacon-period:
+     * pingNb = 2^(7-periodicity)
+     * Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec
+     * Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec
      *
-     * Generated from protobuf field <code>uint32 class_b_ping_slot_nb_k = 17;</code>
+     * Generated from protobuf field <code>uint32 class_b_ping_slot_periodicity = 17;</code>
      * @param int $var
      * @return $this
      */
-    public function setClassBPingSlotNbK($var)
+    public function setClassBPingSlotPeriodicity($var)
     {
         GPBUtil::checkUint32($var);
-        $this->class_b_ping_slot_nb_k = $var;
+        $this->class_b_ping_slot_periodicity = $var;
 
         return $this;
     }
@@ -2213,6 +2287,168 @@ class DeviceProfile extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->rx1_delay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Application Layer parameters.
+     *
+     * Generated from protobuf field <code>.api.AppLayerParams app_layer_params = 54;</code>
+     * @return \Chirpstack\Api\AppLayerParams|null
+     */
+    public function getAppLayerParams()
+    {
+        return $this->app_layer_params;
+    }
+
+    public function hasAppLayerParams()
+    {
+        return isset($this->app_layer_params);
+    }
+
+    public function clearAppLayerParams()
+    {
+        unset($this->app_layer_params);
+    }
+
+    /**
+     * Application Layer parameters.
+     *
+     * Generated from protobuf field <code>.api.AppLayerParams app_layer_params = 54;</code>
+     * @param \Chirpstack\Api\AppLayerParams $var
+     * @return $this
+     */
+    public function setAppLayerParams($var)
+    {
+        GPBUtil::checkMessage($var, \Chirpstack\Api\AppLayerParams::class);
+        $this->app_layer_params = $var;
+
+        return $this;
+    }
+
+    /**
+     * Device-profile device ID (UUID) (optiona).
+     *
+     * Generated from protobuf field <code>string device_id = 55;</code>
+     * @return string
+     */
+    public function getDeviceId()
+    {
+        return $this->device_id;
+    }
+
+    /**
+     * Device-profile device ID (UUID) (optiona).
+     *
+     * Generated from protobuf field <code>string device_id = 55;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeviceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->device_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 56;</code>
+     * @return string
+     */
+    public function getFirmwareVersion()
+    {
+        return $this->firmware_version;
+    }
+
+    /**
+     * Firmware version.
+     *
+     * Generated from protobuf field <code>string firmware_version = 56;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirmwareVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->firmware_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Supported uplink data-rates.
+     * This option configures the data-rates that are supported by the devices
+     * using this device-profile. If not set, the default min / max data-rates
+     * will be used.
+     * Example: In case you would like to use also SF5 and SF6 in EU868, you would
+     * set this option to: 0, 1, 2, 3, 4, 5, 6, 7, 12, 13.
+     *
+     * Generated from protobuf field <code>repeated uint32 supported_uplink_data_rates = 57;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSupportedUplinkDataRates()
+    {
+        return $this->supported_uplink_data_rates;
+    }
+
+    /**
+     * Supported uplink data-rates.
+     * This option configures the data-rates that are supported by the devices
+     * using this device-profile. If not set, the default min / max data-rates
+     * will be used.
+     * Example: In case you would like to use also SF5 and SF6 in EU868, you would
+     * set this option to: 0, 1, 2, 3, 4, 5, 6, 7, 12, 13.
+     *
+     * Generated from protobuf field <code>repeated uint32 supported_uplink_data_rates = 57;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSupportedUplinkDataRates($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->supported_uplink_data_rates = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Class-B downlink only.
+     * If enabled and if the device is operating as Class-B device, then ChirpStack will
+     * only send application payload as Class-B ping slots. This means that if the device
+     * sends a Class-A uplink, ChirpStack will only respond with mac-commands (if needed).
+     * Enabling this option can reduce the risk of out-of-order downlinks in cases where
+     * ChirpStack might schedule a Class-B ping-slot downlink but before this is
+     * transmitted by the gateway, it also responsed with a Class-A downlink.
+     *
+     * Generated from protobuf field <code>bool class_b_downlink_only = 58;</code>
+     * @return bool
+     */
+    public function getClassBDownlinkOnly()
+    {
+        return $this->class_b_downlink_only;
+    }
+
+    /**
+     * Class-B downlink only.
+     * If enabled and if the device is operating as Class-B device, then ChirpStack will
+     * only send application payload as Class-B ping slots. This means that if the device
+     * sends a Class-A uplink, ChirpStack will only respond with mac-commands (if needed).
+     * Enabling this option can reduce the risk of out-of-order downlinks in cases where
+     * ChirpStack might schedule a Class-B ping-slot downlink but before this is
+     * transmitted by the gateway, it also responsed with a Class-A downlink.
+     *
+     * Generated from protobuf field <code>bool class_b_downlink_only = 58;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setClassBDownlinkOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->class_b_downlink_only = $var;
 
         return $this;
     }

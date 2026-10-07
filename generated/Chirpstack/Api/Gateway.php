@@ -63,6 +63,15 @@ class Gateway extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 stats_interval = 8;</code>
      */
     protected $stats_interval = 0;
+    /**
+     * Downlink priority.
+     * ChirpStack selects downlink gateways based on SNR, RSSI, uplink history
+     * and an user-defined downlink priority which can be used as a positive or
+     * negative bias in the downlink gateway selection.
+     *
+     * Generated from protobuf field <code>uint32 downlink_priority = 9;</code>
+     */
+    protected $downlink_priority = 0;
 
     /**
      * Constructor.
@@ -88,6 +97,11 @@ class Gateway extends \Google\Protobuf\Internal\Message
      *           Stats interval (seconds).
      *           This defines the expected interval in which the gateway sends its
      *           statistics.
+     *     @type int $downlink_priority
+     *           Downlink priority.
+     *           ChirpStack selects downlink gateways based on SNR, RSSI, uplink history
+     *           and an user-defined downlink priority which can be used as a positive or
+     *           negative bias in the downlink gateway selection.
      * }
      */
     public function __construct($data = NULL) {
@@ -313,6 +327,38 @@ class Gateway extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->stats_interval = $var;
+
+        return $this;
+    }
+
+    /**
+     * Downlink priority.
+     * ChirpStack selects downlink gateways based on SNR, RSSI, uplink history
+     * and an user-defined downlink priority which can be used as a positive or
+     * negative bias in the downlink gateway selection.
+     *
+     * Generated from protobuf field <code>uint32 downlink_priority = 9;</code>
+     * @return int
+     */
+    public function getDownlinkPriority()
+    {
+        return $this->downlink_priority;
+    }
+
+    /**
+     * Downlink priority.
+     * ChirpStack selects downlink gateways based on SNR, RSSI, uplink history
+     * and an user-defined downlink priority which can be used as a positive or
+     * negative bias in the downlink gateway selection.
+     *
+     * Generated from protobuf field <code>uint32 downlink_priority = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDownlinkPriority($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->downlink_priority = $var;
 
         return $this;
     }

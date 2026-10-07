@@ -20,17 +20,11 @@ class RegionChannel extends \Google\Protobuf\Internal\Message
      */
     protected $frequency = 0;
     /**
-     * Min DR.
+     * Data-rates.
      *
-     * Generated from protobuf field <code>uint32 dr_min = 2;</code>
+     * Generated from protobuf field <code>repeated uint32 data_rates = 4;</code>
      */
-    protected $dr_min = 0;
-    /**
-     * Max DR.
-     *
-     * Generated from protobuf field <code>uint32 dr_max = 3;</code>
-     */
-    protected $dr_max = 0;
+    private $data_rates;
 
     /**
      * Constructor.
@@ -40,10 +34,8 @@ class RegionChannel extends \Google\Protobuf\Internal\Message
      *
      *     @type int $frequency
      *           Frequency (Hz).
-     *     @type int $dr_min
-     *           Min DR.
-     *     @type int $dr_max
-     *           Max DR.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $data_rates
+     *           Data-rates.
      * }
      */
     public function __construct($data = NULL) {
@@ -78,53 +70,27 @@ class RegionChannel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Min DR.
+     * Data-rates.
      *
-     * Generated from protobuf field <code>uint32 dr_min = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>repeated uint32 data_rates = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getDrMin()
+    public function getDataRates()
     {
-        return $this->dr_min;
+        return $this->data_rates;
     }
 
     /**
-     * Min DR.
+     * Data-rates.
      *
-     * Generated from protobuf field <code>uint32 dr_min = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated uint32 data_rates = 4;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setDrMin($var)
+    public function setDataRates($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->dr_min = $var;
-
-        return $this;
-    }
-
-    /**
-     * Max DR.
-     *
-     * Generated from protobuf field <code>uint32 dr_max = 3;</code>
-     * @return int
-     */
-    public function getDrMax()
-    {
-        return $this->dr_max;
-    }
-
-    /**
-     * Max DR.
-     *
-     * Generated from protobuf field <code>uint32 dr_max = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDrMax($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->dr_max = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->data_rates = $arr;
 
         return $this;
     }

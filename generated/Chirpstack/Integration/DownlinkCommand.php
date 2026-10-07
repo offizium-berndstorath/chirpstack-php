@@ -55,6 +55,13 @@ class DownlinkCommand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct object = 6;</code>
      */
     protected $object = null;
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 7;</code>
+     */
+    protected $expires_at = null;
 
     /**
      * Constructor.
@@ -77,6 +84,9 @@ class DownlinkCommand extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $object
      *           Only use this when a codec has been configured that can encode this
      *           object to bytes.
+     *     @type \Google\Protobuf\Timestamp $expires_at
+     *           Expires at (optional).
+     *           Expired queue-items will be automatically removed from the queue.
      * }
      */
     public function __construct($data = NULL) {
@@ -252,6 +262,44 @@ class DownlinkCommand extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->object = $var;
+
+        return $this;
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 7;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->expires_at;
+    }
+
+    public function hasExpiresAt()
+    {
+        return isset($this->expires_at);
+    }
+
+    public function clearExpiresAt()
+    {
+        unset($this->expires_at);
+    }
+
+    /**
+     * Expires at (optional).
+     * Expired queue-items will be automatically removed from the queue.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 7;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setExpiresAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->expires_at = $var;
 
         return $this;
     }

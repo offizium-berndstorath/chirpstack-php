@@ -25,7 +25,7 @@ class Frame
 phy_payload (!
 tx_info (2.gw.UplinkTxInfo!
 rx_info (2.gw.UplinkRxInfo
-m_type (2.common.MType
+f_type (2.common.FType
 dev_addr (	
 dev_eui (	(
 time (2.google.protobuf.Timestamp
@@ -38,7 +38,7 @@ class Frame
 downlink_id (
 
 gateway_id (	
-m_type (2.common.MType
+f_type (2.common.FType
 dev_addr (	
 dev_eui (	
 plaintext_f_opts	 (

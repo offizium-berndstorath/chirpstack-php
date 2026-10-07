@@ -39,6 +39,12 @@ class ApiKey extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tenant_id = 4;</code>
      */
     protected $tenant_id = '';
+    /**
+     * Is read-only.
+     *
+     * Generated from protobuf field <code>bool is_read_only = 5;</code>
+     */
+    protected $is_read_only = false;
 
     /**
      * Constructor.
@@ -56,6 +62,8 @@ class ApiKey extends \Google\Protobuf\Internal\Message
      *     @type string $tenant_id
      *           Tenant ID.
      *           In case the API key is intended to manage resources under a single tenant.
+     *     @type bool $is_read_only
+     *           Is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -167,6 +175,32 @@ class ApiKey extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tenant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Is read-only.
+     *
+     * Generated from protobuf field <code>bool is_read_only = 5;</code>
+     * @return bool
+     */
+    public function getIsReadOnly()
+    {
+        return $this->is_read_only;
+    }
+
+    /**
+     * Is read-only.
+     *
+     * Generated from protobuf field <code>bool is_read_only = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsReadOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_read_only = $var;
 
         return $this;
     }

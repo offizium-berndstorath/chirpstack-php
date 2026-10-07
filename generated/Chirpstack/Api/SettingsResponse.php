@@ -25,6 +25,18 @@ class SettingsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.api.OAuth2 oauth2 = 2;</code>
      */
     protected $oauth2 = null;
+    /**
+     * Tileserver URL.
+     *
+     * Generated from protobuf field <code>string tileserver_url = 3;</code>
+     */
+    protected $tileserver_url = '';
+    /**
+     * Map attribution.
+     *
+     * Generated from protobuf field <code>string map_attribution = 4;</code>
+     */
+    protected $map_attribution = '';
 
     /**
      * Constructor.
@@ -36,6 +48,10 @@ class SettingsResponse extends \Google\Protobuf\Internal\Message
      *           OpenId Connect settings.
      *     @type \Chirpstack\Api\OAuth2 $oauth2
      *           OAuth2 settings.
+     *     @type string $tileserver_url
+     *           Tileserver URL.
+     *     @type string $map_attribution
+     *           Map attribution.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +127,58 @@ class SettingsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Chirpstack\Api\OAuth2::class);
         $this->oauth2 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tileserver URL.
+     *
+     * Generated from protobuf field <code>string tileserver_url = 3;</code>
+     * @return string
+     */
+    public function getTileserverUrl()
+    {
+        return $this->tileserver_url;
+    }
+
+    /**
+     * Tileserver URL.
+     *
+     * Generated from protobuf field <code>string tileserver_url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTileserverUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tileserver_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Map attribution.
+     *
+     * Generated from protobuf field <code>string map_attribution = 4;</code>
+     * @return string
+     */
+    public function getMapAttribution()
+    {
+        return $this->map_attribution;
+    }
+
+    /**
+     * Map attribution.
+     *
+     * Generated from protobuf field <code>string map_attribution = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMapAttribution($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->map_attribution = $var;
 
         return $this;
     }
